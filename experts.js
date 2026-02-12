@@ -187,7 +187,7 @@ const experts = [
   }
 ];
 
-const DEFAULT_AVATAR = "./图1.jpg";
+const DEFAULT_AVATAR = "./图3.jpg";
 
 /** 筛选维度：每个选项对应专家 tags 的匹配集合 */
 const FILTER_OPTIONS = [

@@ -533,13 +533,13 @@ const knowledgeZoneItems = [
 ];
 
 const featuredCourseItems = [
-  { id: "fc1", title: "供应链端到端认知与指标体系", instructor: "赵老师", summary: "建立端到端供应链视角，掌握核心指标与数据口径，形成体系化认知框架。", lessons: 24, enrollCount: 1286, tag: "热销", priceOriginal: 299, priceCurrent: 199, category: "入门", cover: "./图1.jpg" },
-  { id: "fc2", title: "S&OP 协同与滚动计划实战", instructor: "周老师", summary: "搭建 S&OP 会议机制，形成滚动计划模板，提升产销协同与跨部门协作能力。", lessons: 18, enrollCount: 892, tag: "新课", priceOriginal: 399, priceCurrent: 299, category: "计划", cover: "./图1.jpg" },
-  { id: "fc3", title: "仓配网络规划与时效管理", instructor: "丁老师", summary: "掌握仓网规划思路与时效 SLA 设计，优化配送半径与履约成本。", lessons: 30, enrollCount: 2150, tag: "热销", priceOriginal: 499, priceCurrent: 349, category: "仓配", cover: "./图1.jpg" },
-  { id: "fc4", title: "采购成本拆解与供应商分级", instructor: "孙老师", summary: "掌握成本拆解方法，建立供应商分级标准，提升议价与供应稳定性。", lessons: 20, enrollCount: 756, tag: "新课", priceOriginal: 199, priceCurrent: 99, category: "采购", cover: "./图1.jpg" },
-  { id: "fc5", title: "主数据治理与可视化看板搭建", instructor: "周老师", summary: "统一数据口径，搭建运营看板，提升主数据质量与报表时效。", lessons: 22, enrollCount: 1024, tag: "热销", priceOriginal: 359, priceCurrent: 259, category: "数字化", cover: "./图1.jpg" },
-  { id: "fc6", title: "供应链新人必修课", instructor: "李老师", summary: "快速建立供应链基础认知，掌握核心概念与常见流程。", lessons: 12, enrollCount: 3580, tag: "免费", category: "新人", cover: "./图1.jpg" },
-  { id: "fc7", title: "供应链风险识别与应急预案", instructor: "高老师", summary: "建立风险分级模型，制定应急响应流程，优化安全库存策略。", lessons: 16, enrollCount: 634, tag: "新课", priceOriginal: 259, priceCurrent: 199, category: "风险", cover: "./图1.jpg" }
+  { id: "fc1", title: "供应链端到端认知与指标体系", instructor: "赵老师", summary: "建立端到端供应链视角，掌握核心指标与数据口径，形成体系化认知框架。", lessons: 24, enrollCount: 1286, tag: "热销", priceOriginal: 299, priceCurrent: 199, category: "入门", cover: "./图3.jpg" },
+  { id: "fc2", title: "S&OP 协同与滚动计划实战", instructor: "周老师", summary: "搭建 S&OP 会议机制，形成滚动计划模板，提升产销协同与跨部门协作能力。", lessons: 18, enrollCount: 892, tag: "新课", priceOriginal: 399, priceCurrent: 299, category: "计划", cover: "./图3.jpg" },
+  { id: "fc3", title: "仓配网络规划与时效管理", instructor: "丁老师", summary: "掌握仓网规划思路与时效 SLA 设计，优化配送半径与履约成本。", lessons: 30, enrollCount: 2150, tag: "热销", priceOriginal: 499, priceCurrent: 349, category: "仓配", cover: "./图3.jpg" },
+  { id: "fc4", title: "采购成本拆解与供应商分级", instructor: "孙老师", summary: "掌握成本拆解方法，建立供应商分级标准，提升议价与供应稳定性。", lessons: 20, enrollCount: 756, tag: "新课", priceOriginal: 199, priceCurrent: 99, category: "采购", cover: "./图3.jpg" },
+  { id: "fc5", title: "主数据治理与可视化看板搭建", instructor: "周老师", summary: "统一数据口径，搭建运营看板，提升主数据质量与报表时效。", lessons: 22, enrollCount: 1024, tag: "热销", priceOriginal: 359, priceCurrent: 259, category: "数字化", cover: "./图3.jpg" },
+  { id: "fc6", title: "供应链新人必修课", instructor: "李老师", summary: "快速建立供应链基础认知，掌握核心概念与常见流程。", lessons: 12, enrollCount: 3580, tag: "免费", category: "新人", cover: "./图3.jpg" },
+  { id: "fc7", title: "供应链风险识别与应急预案", instructor: "高老师", summary: "建立风险分级模型，制定应急响应流程，优化安全库存策略。", lessons: 16, enrollCount: 634, tag: "新课", priceOriginal: 259, priceCurrent: 199, category: "风险", cover: "./图3.jpg" }
 ];
 
 const industryReportItems = [
@@ -641,7 +641,7 @@ function renderHome() {
             (project) => `
           <article class="card project-card link-card" data-project-id="${project.id}">
             <div class="project-card__media">
-              <img src="${project.cover || './图1.jpg'}" alt="" />
+              <img src="${project.cover || './图3.jpg'}" alt="" />
             </div>
             <div class="project-card__body">
               <span class="project-card__industry">${project.industry} · 项目成果</span>
@@ -684,7 +684,7 @@ function renderHome() {
           (c) => `
         <article class="card academy-card link-card" data-course-id="${c.id}">
           <div class="academy-card__media">
-            <img src="${c.cover || './图1.jpg'}" alt="" />
+            <img src="${c.cover || './图3.jpg'}" alt="" />
           </div>
           <div class="academy-card__body">
             <h3 class="academy-card__title">${c.title}</h3>
@@ -1004,7 +1004,7 @@ function getMetricUnit(valueText) {
   return match ? match[0] : "";
 }
 
-const DEFAULT_AVATAR = "./图1.jpg";
+const DEFAULT_AVATAR = "./图3.jpg";
 
 function renderExpertCard(expert) {
   const identity = (expert.title || "").slice(0, 16);
