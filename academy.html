@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="培训学院提供课程、白皮书与专业报告，沉淀供应链行业的方法论与实践经验。" />
+  <title>培训学院 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .academy-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .academy-overview-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    .academy-overview-title {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .academy-overview-sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .academy-overview-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .academy-overview-stat {
+      display: grid;
+      gap: 4px;
+      text-align: right;
+    }
+
+    .academy-overview-stat strong {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .academy-content {
+      padding-top: 0;
+    }
+
+    .academy-hero {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)),
+        url("./图1.jpg") center/cover no-repeat;
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .academy-hero-inner {
+      padding: 32px 0 24px;
+      align-items: center;
+    }
+
+    .academy-hero-promo {
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      backdrop-filter: none;
+    }
+
+    .academy-hero-title {
+      margin: 12px 0 10px;
+      font-size: 2.1rem;
+      line-height: 1.25;
+      color: var(--text);
+    }
+
+    .academy-hero-lead {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    .academy-hero-pill {
+      background: rgba(31, 74, 165, 0.12);
+      color: var(--primary);
+    }
+
+    .academy-hero-tags {
+      margin-top: 12px;
+    }
+
+    .academy-hero-checkin {
+      max-width: 260px;
+    }
+
+    .academy-hero .btn {
+      background: #ffffff;
+      color: var(--text);
+      box-shadow: 0 10px 20px rgba(15, 47, 109, 0.12);
+    }
+
+    .academy-hero .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(15, 47, 109, 0.35);
+    }
+
+    .academy-section--full {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 16px 0;
+    }
+
+    .academy-section {
+      margin-bottom: 0;
+    }
+
+    .academy-section--full + .academy-section--full {
+      margin-top: 12px;
+    }
+
+    .academy-section--overview + .academy-section--path {
+      margin-top: 0;
+    }
+
+    .academy-section__inner {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+    }
+
+    .academy-section--overview {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(15, 47, 109, 0.08);
+    }
+
+    .academy-section--path {
+      background: #f5f7fb;
+    }
+
+    .academy-section--path .academy-block {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 20px 0;
+    }
+
+    .academy-section--path .academy-block::before {
+      content: none;
+    }
+
+    .academy-section--courses {
+      background: #ffffff;
+    }
+
+    .academy-section--whitepaper {
+      background: #f7f9fc;
+    }
+
+    .academy-section--reports {
+      background: #ffffff;
+    }
+
+    .academy-section--mentors {
+      background: #f3f6fb;
+    }
+
+    .academy-section--mentors .academy-section__inner {
+      padding: 12px 0;
+    }
+
+    .academy-section--services {
+      background: #ffffff;
+    }
+
+    .academy-section--cta {
+      background: #f7f9fc;
+    }
+
+    .academy-header-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+    }
+
+    .academy-header-search input {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      width: 180px;
+      outline: none;
+    }
+
+    .academy-header-search input::placeholder {
+      color: var(--muted);
+    }
+
+    .academy-checkin-progress {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .academy-checkin-progress-labels {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .academy-checkin-progress-track {
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .academy-checkin-progress-bar {
+      height: 100%;
+      width: 65%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .academy-checkin-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .academy-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="academy-page">
+    <header class="site-header">
+      <div class="container nav-bar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <p class="brand-title">链域智汇 · 培训学院</p>
+            <p class="brand-sub">Supply Chain Intelligence</p>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="主导航">
+          <a class="nav-link active" href="academy.html">首页</a>
+          <a class="nav-link" href="#academy-courses-title">课程体系</a>
+          <a class="nav-link" href="#academy-whitepaper-title">白皮书</a>
+          <a class="nav-link" href="#academy-reports-title">行业报告</a>
+        </nav>
+        <div class="academy-header-actions">
+          <label class="academy-header-search" aria-label="搜索课程与资料">
+            <span aria-hidden="true">🔍</span>
+            <input type="text" placeholder="搜索课程 / 白皮书 / 报告" />
+          </label>
+          <a class="btn" href="login.html">登录 / 注册</a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="academy-hero">
+        <div class="container academy-hero-inner">
+          <div class="academy-hero-promo">
+            <span class="academy-hero-pill">体系化课程</span>
+            <h1 class="academy-hero-title">从课程到白皮书的知识中枢</h1>
+            <p class="academy-hero-lead">
+              聚焦供应链战略、运营优化与数字化转型。提供结构化课程、白皮书与专业报告，支持企业持续提升能力。
+            </p>
+            <div class="btn-row" style="margin-top: 18px;">
+              <button class="btn" type="button">查看课程体系</button>
+              <button class="btn secondary" type="button">下载学院手册</button>
+            </div>
+          </div>
+          <div class="academy-hero-checkin">
+            <div class="academy-checkin-head">
+              <span class="academy-checkin-icon" aria-hidden="true">🎯</span>
+              <span class="academy-checkin-title">学习任务中心</span>
+            </div>
+            <p class="academy-checkin-days">本周已完成 4 / 6 节学习任务。</p>
+            <div class="academy-checkin-progress">
+              <div class="academy-checkin-progress-labels">
+                <span>学习进度</span>
+                <span>12 小时</span>
+              </div>
+              <div class="academy-checkin-progress-track" aria-hidden="true">
+                <div class="academy-checkin-progress-bar"></div>
+              </div>
+              <p class="academy-checkin-meta" style="margin: 0;">
+                通过系统化学习提升专业能力，目前进度 65%。
+              </p>
+            </div>
+            <button class="academy-checkin-btn" type="button">查看学习路径</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="academy-content">
+        <div class="container">
+          <section class="academy-section academy-section--full academy-section--overview" aria-labelledby="academy-overview-title">
+            <div class="academy-section__inner">
+              <div class="academy-overview-row">
+              <div>
+                <h2 id="academy-overview-title" class="academy-overview-title">学院概览</h2>
+                <p class="academy-overview-sub">建立“课程 + 白皮书 + 报告”的一体化知识供给体系。</p>
+              </div>
+              <div class="academy-overview-stats" aria-label="学院数据">
+                <div class="academy-overview-stat">
+                  <strong>56</strong>
+                  <span>门课程</span>
+                </div>
+                <div class="academy-overview-stat">
+                  <strong>18</strong>
+                  <span>本白皮书</span>
+                </div>
+                <div class="academy-overview-stat">
+                  <strong>32</strong>
+                  <span>份专业报告</span>
+                </div>
+                <div class="academy-overview-stat">
+                  <strong>120+</strong>
+                  <span>行业案例</span>
+                </div>
+              </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="academy-section academy-section--full academy-section--path" aria-labelledby="academy-path-title">
+            <div class="academy-section__inner">
+              <div class="academy-block">
+              <div class="academy-head">
+                <div>
+                  <h2 id="academy-path-title" class="academy-section-title">学习路径</h2>
+                  <p class="academy-section-sub">从入门到落地，提供不同岗位与阶段的能力提升路线。</p>
+                </div>
+                <a class="btn secondary" href="dashboard-learning.html">进入我的学习</a>
+              </div>
+              <div class="grid grid-3">
+                <article class="feature-card">
+                  <h3>供应链负责人路径</h3>
+                  <p class="muted">聚焦战略规划、S&OP与韧性体系建设。</p>
+                  <ul class="chip-list compact" aria-label="关键模块">
+                    <span>战略与组织</span>
+                    <span>S&OP治理</span>
+                    <span>风险与韧性</span>
+                    <span>价值衡量</span>
+                  </ul>
+                </article>
+                <article class="feature-card">
+                  <h3>运营与计划路径</h3>
+                  <p class="muted">强化需求预测、库存优化与交付管理能力。</p>
+                  <ul class="chip-list compact" aria-label="关键模块">
+                    <span>需求预测</span>
+                    <span>库存优化</span>
+                    <span>OTIF提升</span>
+                    <span>协同补货</span>
+                  </ul>
+                </article>
+                <article class="feature-card">
+                  <h3>数字化转型路径</h3>
+                  <p class="muted">规划蓝图与数据治理，落地可视化与智能决策。</p>
+                  <ul class="chip-list compact" aria-label="关键模块">
+                    <span>蓝图规划</span>
+                    <span>主数据治理</span>
+                    <span>可视化看板</span>
+                    <span>AI场景</span>
+                  </ul>
+                </article>
+              </div>
+              </div>
+            </div>
+          </section>
+          <section class="academy-section academy-section--full academy-section--courses" aria-labelledby="academy-courses-title">
+            <div class="academy-section__inner">
+              <div class="academy-section-head">
+              <div>
+                <h2 id="academy-courses-title" class="academy-section-title">课程体系</h2>
+                <p class="academy-section-sub">覆盖战略规划、运营优化、数字化与风险管理四大方向。</p>
+              </div>
+              <div class="academy-category-tabs" role="tablist" aria-label="课程分类">
+                <button class="academy-cat-tab active" type="button">全部课程</button>
+                <button class="academy-cat-tab" type="button">实战案例</button>
+                <button class="academy-cat-tab" type="button">认证课程</button>
+                <button class="academy-cat-tab" type="button">内训方案</button>
+              </div>
+            </div>
+            <div class="academy-course-grid">
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag hot">热门</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">📦</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">供应链战略规划与S&OP体系建设</h3>
+                  <p class="academy-course-meta">12 课时 · 战略规划</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-old">￥3,980</span>
+                    <span class="academy-price-curr">￥2,980</span>
+                  </div>
+                </div>
+              </article>
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag new">新课</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">🔗</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">供应链数字化蓝图与主数据治理</h3>
+                  <p class="academy-course-meta">10 课时 · 数字化转型</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-old">￥4,280</span>
+                    <span class="academy-price-curr">￥3,680</span>
+                  </div>
+                </div>
+              </article>
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag free">免费</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">📈</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">供应链绩效指标与运营仪表盘搭建</h3>
+                  <p class="academy-course-meta">6 课时 · 运营提升</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-free">免费学习</span>
+                  </div>
+                </div>
+              </article>
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag hot">热门</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">🧭</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">供应链风险监控与韧性建设</h3>
+                  <p class="academy-course-meta">8 课时 · 风险管理</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-old">￥3,200</span>
+                    <span class="academy-price-curr">￥2,560</span>
+                  </div>
+                </div>
+              </article>
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag new">新课</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">🤝</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">采购协同与供应商绩效提升实战</h3>
+                  <p class="academy-course-meta">9 课时 · 采购管理</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-old">￥3,600</span>
+                    <span class="academy-price-curr">￥2,980</span>
+                  </div>
+                </div>
+              </article>
+              <article class="academy-course-card">
+                <div class="academy-course-cover">
+                  <span class="academy-course-tag free">免费</span>
+                  <span class="academy-course-cover-emoji" aria-hidden="true">🧠</span>
+                </div>
+                <div class="academy-course-body">
+                  <h3 class="academy-course-title">供应链数字化趋势公开课</h3>
+                  <p class="academy-course-meta">4 课时 · 行业洞察</p>
+                  <div class="academy-course-price">
+                    <span class="academy-price-free">免费学习</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            </div>
+          </section>
+
+          <section class="academy-section academy-section--full academy-section--whitepaper" aria-labelledby="academy-whitepaper-title">
+            <div class="academy-section__inner">
+              <div class="academy-section-head">
+              <div>
+                <h2 id="academy-whitepaper-title" class="academy-section-title">白皮书</h2>
+                <p class="academy-section-sub">聚焦行业趋势、案例洞察与方法论最佳实践。</p>
+              </div>
+            </div>
+            <div class="academy-knowledge-grid">
+              <article class="academy-knowledge-card">
+                <div class="academy-knowledge-icon" aria-hidden="true">WP</div>
+                <div class="academy-knowledge-body">
+                  <p class="academy-knowledge-cat">年度白皮书</p>
+                  <h3 class="academy-knowledge-title">2025 供应链数字化成熟度白皮书</h3>
+                  <p class="academy-knowledge-meta">89 页 · 覆盖 120+ 企业样本</p>
+                </div>
+              </article>
+              <article class="academy-knowledge-card">
+                <div class="academy-knowledge-icon" aria-hidden="true">AI</div>
+                <div class="academy-knowledge-body">
+                  <p class="academy-knowledge-cat">专题白皮书</p>
+                  <h3 class="academy-knowledge-title">生成式AI在供应链决策中的落地路径</h3>
+                  <p class="academy-knowledge-meta">52 页 · 12 个落地场景</p>
+                </div>
+              </article>
+              <article class="academy-knowledge-card">
+                <div class="academy-knowledge-icon" aria-hidden="true">ES</div>
+                <div class="academy-knowledge-body">
+                  <p class="academy-knowledge-cat">ESG专题</p>
+                  <h3 class="academy-knowledge-title">供应链ESG治理与合规实践指南</h3>
+                  <p class="academy-knowledge-meta">44 页 · 覆盖 6 大行业</p>
+                </div>
+              </article>
+              <article class="academy-knowledge-card">
+                <div class="academy-knowledge-icon" aria-hidden="true">RM</div>
+                <div class="academy-knowledge-body">
+                  <p class="academy-knowledge-cat">方法论白皮书</p>
+                  <h3 class="academy-knowledge-title">供应链韧性模型与风险评估工具包</h3>
+                  <p class="academy-knowledge-meta">36 页 · 15 个评估指标</p>
+                </div>
+              </article>
+            </div>
+            <div class="academy-more-wrap">
+              <button class="academy-more-btn" type="button">查看更多白皮书</button>
+            </div>
+            </div>
+          </section>
+
+          <section class="academy-section academy-section--full academy-section--reports" aria-labelledby="academy-reports-title">
+            <div class="academy-section__inner">
+              <div class="academy-section-head">
+              <div>
+                <h2 id="academy-reports-title" class="academy-section-title">专业报告</h2>
+                <p class="academy-section-sub">聚焦行业景气度、细分赛道与标杆企业实践。</p>
+              </div>
+            </div>
+            <div class="academy-report-grid">
+              <article class="academy-report-card">
+                <div class="academy-report-header">Q1</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">2025年一季度供应链景气度指数报告</h3>
+                  <p class="academy-report-meta">更新：2025/04/10 · 26 页</p>
+                </div>
+              </article>
+              <article class="academy-report-card">
+                <div class="academy-report-header academy-report-bg-sky">AI</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">AI赋能供应链可视化与预警实践报告</h3>
+                  <p class="academy-report-meta">更新：2025/03/28 · 18 页</p>
+                </div>
+              </article>
+              <article class="academy-report-card">
+                <div class="academy-report-header academy-report-bg-pink">新零售</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">新零售供应链协同能力评估报告</h3>
+                  <p class="academy-report-meta">更新：2025/03/12 · 22 页</p>
+                </div>
+              </article>
+              <article class="academy-report-card">
+                <div class="academy-report-header academy-report-bg-green">制造</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">制造企业供应链成本与库存优化专项报告</h3>
+                  <p class="academy-report-meta">更新：2025/02/26 · 30 页</p>
+                </div>
+              </article>
+              <article class="academy-report-card">
+                <div class="academy-report-header">跨境</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">跨境供应链合规与风险画像报告</h3>
+                  <p class="academy-report-meta">更新：2025/02/05 · 20 页</p>
+                </div>
+              </article>
+              <article class="academy-report-card">
+                <div class="academy-report-header academy-report-bg-sky">物流</div>
+                <div class="academy-report-body">
+                  <h3 class="academy-report-title">物流网络优化与多仓协同指数报告</h3>
+                  <p class="academy-report-meta">更新：2025/01/18 · 24 页</p>
+                </div>
+              </article>
+            </div>
+            <div class="academy-more-wrap">
+              <button class="academy-more-btn" type="button">查看更多报告</button>
+            </div>
+            </div>
+          </section>
+
+          <section class="academy-section academy-section--full academy-section--mentors" aria-labelledby="academy-mentors-title">
+            <div class="academy-section__inner">
+              <div class="academy-section-head">
+              <div>
+                <h2 id="academy-mentors-title" class="academy-section-title">讲师与专家</h2>
+                <p class="academy-section-sub">来自头部企业与咨询机构的供应链实战专家。</p>
+              </div>
+            </div>
+            <div class="grid grid-3">
+              <article class="card">
+                <div style="display: flex; gap: 14px; align-items: center;">
+                  <div class="avatar xl">郑</div>
+                  <div>
+                    <h3 style="margin: 0 0 4px;">郑鸿</h3>
+                    <p class="muted" style="margin: 0;">供应链战略与S&OP负责人</p>
+                  </div>
+                </div>
+                <p class="muted" style="margin: 12px 0 0;">
+                  15 年制造业供应链规划经验，主导多家集团级 S&OP 体系落地。
+                </p>
+              </article>
+              <article class="card">
+                <div style="display: flex; gap: 14px; align-items: center;">
+                  <div class="avatar xl">孙</div>
+                  <div>
+                    <h3 style="margin: 0 0 4px;">孙筠</h3>
+                    <p class="muted" style="margin: 0;">采购与成本优化专家</p>
+                  </div>
+                </div>
+                <p class="muted" style="margin: 12px 0 0;">
+                  聚焦供应商协同与成本优化，服务 30+ 制造与零售企业。
+                </p>
+              </article>
+              <article class="card">
+                <div style="display: flex; gap: 14px; align-items: center;">
+                  <div class="avatar xl">周</div>
+                  <div>
+                    <h3 style="margin: 0 0 4px;">周栩</h3>
+                    <p class="muted" style="margin: 0;">数字化转型顾问</p>
+                  </div>
+                </div>
+                <p class="muted" style="margin: 12px 0 0;">
+                  擅长供应链数据治理与可视化决策，推动企业跨系统协同升级。
+                </p>
+              </article>
+            </div>
+            </div>
+          </section>
+
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

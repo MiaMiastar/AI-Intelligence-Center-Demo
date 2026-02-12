@@ -1,0 +1,6 @@
+.apply-field__value { margin: 0; font-size: 0.875rem; color: #0f1a2b; line-height: 1.5; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; }
+.apply-field__value--block { white-space: pre-wrap; min-height: 60px; }
+.project-detail-actions { position: fixed; bottom: 0; left: 72px; right: 0; z-index: 10; background: #fff; border-top: 1px solid #e2e8f0; padding: 14px 48px; }
+@media (max-width: 900px) { .project-detail-actions { left: 0; padding-left: 24px; padding-right: 24px; } }
+
+@media (max-width: 900px) { .project-detail-actions { left: 0; padding-left: 24px; padding-right: 24px; } }

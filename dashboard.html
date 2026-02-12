@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工作台 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <!-- 左侧边栏 -->
+    <aside class="dashboard-sidebar" aria-label="主导航">
+      <div class="dashboard-sidebar__top">
+        <a href="index.html" class="dashboard-logo" title="链域智汇 首页">
+          <span class="dashboard-logo__mark">链</span>
+        </a>
+        <div class="dashboard-sidebar__brand-wrap">
+          <span class="dashboard-sidebar__brand">链域智汇</span>
+        </div>
+      </div>
+      <nav class="dashboard-nav" aria-label="功能菜单">
+        <a href="dashboard-experts.html" class="dashboard-nav__item" id="dashboard-nav-experts" title="专家智库">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/></svg>
+          </span>
+          <span class="dashboard-nav__label">专家智库</span>
+        </a>
+        <a href="dashboard-projects.html" class="dashboard-nav__item" title="项目成果">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
+          </span>
+          <span class="dashboard-nav__label">项目成果</span>
+        </a>
+        <a href="dashboard-learning.html" class="dashboard-nav__item" title="我的学习">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg>
+          </span>
+          <span class="dashboard-nav__label">我的学习</span>
+        </a>
+      </nav>
+      <div class="dashboard-sidebar__bottom">
+        <div class="dashboard-sidebar__user" id="dashboard-sidebar-user">
+          <span class="dashboard-sidebar__user-avatar" id="dashboard-sidebar-avatar">
+            <span id="dashboard-avatar-letter" class="dashboard-avatar__letter">M</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <div class="dashboard-main">
+      <div class="dashboard-content">
+        <!-- 工作台首页视图 -->
+        <div id="dashboard-view-home" class="dashboard-view">
+          <header class="dashboard-hero">
+            <h1 class="dashboard-hero__title">链域智汇</h1>
+            <p class="dashboard-hero__subtitle">供应链 · 发现 · 探索 · 赋能</p>
+          </header>
+
+          <!-- 输入与模式 -->
+          <div class="dashboard-query">
+            <div class="dashboard-query__box">
+              <input type="text" class="dashboard-query__input" id="dashboard-query-input" placeholder="输入你的供应链难题，开启探索与思考" />
+              <div class="dashboard-query__bar">
+                <span class="dashboard-query__mode">
+                  <span class="dashboard-query__mode-icon">📄</span>
+                  <span>智能问答</span>
+                </span>
+                <span class="dashboard-query__mode dashboard-query__mode--active">
+                  <span class="dashboard-query__mode-icon">✦</span>
+                  <span>深度思考</span>
+                </span>
+                <span class="dashboard-query__mode">
+                  <span class="dashboard-query__mode-icon">⚙</span>
+                </span>
+                <span class="dashboard-query__mode">
+                  <span class="dashboard-query__mode-icon">🌐</span>
+                </span>
+                <div class="dashboard-query__actions">
+                  <button type="button" class="dashboard-query__action" title="附件">📎</button>
+                  <button type="button" class="dashboard-query__action" title="图片">🖼</button>
+                  <button type="button" class="dashboard-query__action dashboard-query__action--send" title="发送">↑</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 推荐话题 -->
+          <section class="dashboard-suggest">
+            <div class="dashboard-suggest__row">
+              <span class="dashboard-suggest__label">深度思考</span>
+              <button type="button" class="dashboard-suggest__tag">如何构建供应链协同与 S&OP 体系</button>
+              <span class="dashboard-suggest__label">联网思考</span>
+              <button type="button" class="dashboard-suggest__tag">多工厂产能负荷与交期承诺优化方法</button>
+            </div>
+            <div class="dashboard-suggest__row">
+              <span class="dashboard-suggest__label">智能问答</span>
+              <button type="button" class="dashboard-suggest__tag">如何解决需求预测准确率低与库存周转矛盾？</button>
+            </div>
+          </section>
+
+          <!-- 探索更多 -->
+          <section class="dashboard-explore">
+            <h2 class="dashboard-explore__title">
+              <span class="dashboard-explore__title-icon">✦</span>
+              探索更多
+            </h2>
+            <div class="dashboard-explore__grid">
+              <a href="dashboard-experts.html" class="dashboard-explore__card">
+                <div class="dashboard-explore__card-media dashboard-explore__card-media--experts"></div>
+                <div class="dashboard-explore__card-body">
+                  <h3 class="dashboard-explore__card-title">专家智库</h3>
+                  <p class="dashboard-explore__card-desc">浏览与预约供应链领域专家</p>
+                </div>
+              </a>
+              <a href="dashboard-projects.html" class="dashboard-explore__card">
+                <div class="dashboard-explore__card-media dashboard-explore__card-media--projects"></div>
+                <div class="dashboard-explore__card-body">
+                  <h3 class="dashboard-explore__card-title">项目成果</h3>
+                  <p class="dashboard-explore__card-desc">查看可复制的项目案例与指标</p>
+                </div>
+              </a>
+              <a href="index.html#/academy" class="dashboard-explore__card">
+                <div class="dashboard-explore__card-media dashboard-explore__card-media--academy"></div>
+                <div class="dashboard-explore__card-body">
+                  <h3 class="dashboard-explore__card-title">培训学院</h3>
+                  <p class="dashboard-explore__card-desc">体系化课程与学习路径</p>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- 欢迎与快捷 -->
+          <section class="dashboard-welcome">
+            <p class="dashboard-welcome__text">欢迎回来，<span id="dashboard-username"></span></p>
+          </section>
+          <section class="dashboard-section">
+            <h2 class="dashboard-section__title">推荐专家</h2>
+            <a class="dashboard-section__link" href="dashboard-experts.html">查看全部</a>
+            <div id="dashboard-experts" class="dashboard-experts-grid"></div>
+          </section>
+          <section class="dashboard-section">
+            <h2 class="dashboard-section__title">近期项目</h2>
+            <a class="dashboard-section__link" href="dashboard-projects.html">查看全部</a>
+            <ul id="dashboard-projects" class="dashboard-project-list"></ul>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>

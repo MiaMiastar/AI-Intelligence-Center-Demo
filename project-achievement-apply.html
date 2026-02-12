@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="成果评估申请 - 填写项目基础信息、核心描述、技术与成果、知识产权、市场应用及评估相关属性。" />
+  <title>成果评估申请 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./dashboard.css" />
+  <link rel="stylesheet" href="./project-achievement-apply.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <!-- 左侧边栏 -->
+    <aside class="dashboard-sidebar" aria-label="主导航">
+      <div class="dashboard-sidebar__top">
+        <a href="dashboard.html" class="dashboard-logo" title="链域智汇 工作台">
+          <span class="dashboard-logo__mark">链</span>
+        </a>
+        <div class="dashboard-sidebar__brand-wrap">
+          <span class="dashboard-sidebar__brand">链域智汇</span>
+        </div>
+      </div>
+      <nav class="dashboard-nav" aria-label="功能菜单">
+        <a href="dashboard-experts.html" class="dashboard-nav__item" title="专家智库">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/></svg>
+          </span>
+          <span class="dashboard-nav__label">专家智库</span>
+        </a>
+        <a href="dashboard-projects.html" class="dashboard-nav__item dashboard-nav__item--active" title="项目成果">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
+          </span>
+          <span class="dashboard-nav__label">项目成果</span>
+        </a>
+        <a href="index.html#/academy" class="dashboard-nav__item" title="我的学习">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg>
+          </span>
+          <span class="dashboard-nav__label">我的学习</span>
+        </a>
+      </nav>
+      <div class="dashboard-sidebar__bottom">
+        <div class="dashboard-sidebar__user" id="dashboard-sidebar-user">
+          <span class="dashboard-sidebar__user-avatar" id="dashboard-sidebar-avatar">
+            <span id="dashboard-avatar-letter" class="dashboard-avatar__letter">M</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容区：成果评估申请 -->
+    <div class="dashboard-main">
+      <div class="dashboard-content dashboard-content--apply">
+        <header class="apply-hero">
+          <a href="dashboard-projects.html" class="apply-hero__back">← 返回项目成果</a>
+          <h1 class="apply-hero__title">成果评估申请</h1>
+          <p class="apply-hero__subtitle">请按 Tab 分步填写基础身份、核心描述、技术与成果、知识产权、市场应用及评估相关信息</p>
+        </header>
+
+        <div class="apply-form">
+          <div class="apply-body">
+            <main class="apply-main">
+          <form id="projectAchievementForm" novalidate>
+          <!-- Tab 1: 基础身份属性 -->
+          <section id="panel-1" class="apply-panel apply-panel--active" role="tabpanel" aria-labelledby="tab-1">
+            <h2 class="apply-panel__title">基础身份</h2>
+            <div class="apply-fields">
+              <div class="apply-field">
+                <label class="apply-field__label" for="projectName">项目名称</label>
+                <input id="projectName" name="projectName" type="text" class="apply-field__input" placeholder="请输入项目名称" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="projectCode">项目编号</label>
+                <input id="projectCode" name="projectCode" type="text" class="apply-field__input" placeholder="请输入项目编号" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="belongUnit">所属单位</label>
+                <input id="belongUnit" name="belongUnit" type="text" class="apply-field__input" placeholder="请输入所属单位" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="applyDept">申报部门</label>
+                <input id="applyDept" name="applyDept" type="text" class="apply-field__input" placeholder="请输入申报部门" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="projectLeader">项目负责人</label>
+                <input id="projectLeader" name="projectLeader" type="text" class="apply-field__input" placeholder="请输入项目负责人" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="contactPerson">联系人</label>
+                <input id="contactPerson" name="contactPerson" type="text" class="apply-field__input" placeholder="请输入联系人" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="contactInfo">联系方式（电话 / 邮箱）</label>
+                <input id="contactInfo" name="contactInfo" type="text" class="apply-field__input" placeholder="电话或邮箱" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="applyTime">申报时间</label>
+                <input id="applyTime" name="applyTime" type="date" class="apply-field__input" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Tab 2: 项目核心描述属性 -->
+          <section id="panel-2" class="apply-panel" role="tabpanel" aria-labelledby="tab-2">
+            <h2 class="apply-panel__title">核心描述</h2>
+            <div class="apply-fields">
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="projectBackground">项目背景</label>
+                <textarea id="projectBackground" name="projectBackground" class="apply-field__textarea" rows="4" placeholder="请输入项目背景"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="projectGoal">项目目标</label>
+                <textarea id="projectGoal" name="projectGoal" class="apply-field__textarea" rows="4" placeholder="请输入项目目标"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="projectDesc">项目描述（核心内容简介）</label>
+                <textarea id="projectDesc" name="projectDesc" class="apply-field__textarea" rows="5" placeholder="核心内容简介"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="techRoute">技术路线</label>
+                <textarea id="techRoute" name="techRoute" class="apply-field__textarea" rows="4" placeholder="请输入技术路线"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="techInnovation">核心技术创新点</label>
+                <textarea id="techInnovation" name="techInnovation" class="apply-field__textarea" rows="4" placeholder="请输入核心技术创新点"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="keyProblems">解决的关键问题</label>
+                <textarea id="keyProblems" name="keyProblems" class="apply-field__textarea" rows="4" placeholder="请输入解决的关键问题"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="trlLevel">技术成熟度等级（TRL）</label>
+                <input id="trlLevel" name="trlLevel" type="text" class="apply-field__input" placeholder="如 TRL 1–9" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="projectStage">项目阶段</label>
+                <select id="projectStage" name="projectStage" class="apply-field__select">
+                  <option value="">请选择</option>
+                  <option value="研发中">研发中</option>
+                  <option value="试点">试点</option>
+                  <option value="商业化">商业化</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tab 3: 技术与成果属性 -->
+          <section id="panel-3" class="apply-panel" role="tabpanel" aria-labelledby="tab-3">
+            <h2 class="apply-panel__title">技术与成果</h2>
+            <div class="apply-fields">
+              <div class="apply-field apply-field--full">
+                <span class="apply-field__label">成果类型</span>
+                <div class="apply-field__checkgroup" role="group" aria-label="成果类型">
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="软件系统" /> 软件系统</label>
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="算法模型" /> 算法模型</label>
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="平台产品" /> 平台产品</label>
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="专利成果" /> 专利成果</label>
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="技术方案" /> 技术方案</label>
+                  <label class="apply-field__checkbox"><input type="checkbox" name="resultType" value="其他" /> 其他</label>
+                </div>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="techArch">技术架构说明</label>
+                <textarea id="techArch" name="techArch" class="apply-field__textarea" rows="5" placeholder="技术架构说明"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="deployForm">系统部署形态</label>
+                <select id="deployForm" name="deployForm" class="apply-field__select">
+                  <option value="">请选择</option>
+                  <option value="本地">本地</option>
+                  <option value="云">云</option>
+                  <option value="混合">混合</option>
+                </select>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="perfMetrics">性能指标</label>
+                <textarea id="perfMetrics" name="perfMetrics" class="apply-field__textarea" rows="3" placeholder="性能指标"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="testResult">测试结果说明</label>
+                <textarea id="testResult" name="testResult" class="apply-field__textarea" rows="4" placeholder="测试结果说明"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="testReport">测试报告附件</label>
+                <input id="testReport" name="testReport" type="file" class="apply-field__file" accept=".pdf,.doc,.docx" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="userManual">用户手册附件</label>
+                <input id="userManual" name="userManual" type="file" class="apply-field__file" accept=".pdf,.doc,.docx" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="techDoc">技术文档附件</label>
+                <input id="techDoc" name="techDoc" type="file" class="apply-field__file" accept=".pdf,.doc,.docx" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Tab 4: 知识产权属性 -->
+          <section id="panel-4" class="apply-panel" role="tabpanel" aria-labelledby="tab-4">
+            <h2 class="apply-panel__title">知识产权</h2>
+            <div class="apply-fields">
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="patentInfo">专利情况</label>
+                <textarea id="patentInfo" name="patentInfo" class="apply-field__textarea" rows="4" placeholder="专利编号、名称、状态等"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="softwareCopyright">软件著作权情况</label>
+                <textarea id="softwareCopyright" name="softwareCopyright" class="apply-field__textarea" rows="4" placeholder="软著登记号、名称等"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="paperPublish">论文发表情况</label>
+                <textarea id="paperPublish" name="paperPublish" class="apply-field__textarea" rows="4" placeholder="论文题目、期刊/会议、发表时间等"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="ipOwnership">知识产权归属</label>
+                <textarea id="ipOwnership" name="ipOwnership" class="apply-field__textarea" rows="3" placeholder="知识产权归属说明"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="ipDispute">是否存在权属争议</label>
+                <select id="ipDispute" name="ipDispute" class="apply-field__select">
+                  <option value="">请选择</option>
+                  <option value="否">否</option>
+                  <option value="是">是</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tab 5: 市场与应用属性 -->
+          <section id="panel-5" class="apply-panel" role="tabpanel" aria-labelledby="tab-5">
+            <h2 class="apply-panel__title">市场与应用</h2>
+            <div class="apply-fields">
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="appScenario">应用场景</label>
+                <textarea id="appScenario" name="appScenario" class="apply-field__textarea" rows="4" placeholder="应用场景描述"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="targetIndustry">目标行业</label>
+                <input id="targetIndustry" name="targetIndustry" type="text" class="apply-field__input" placeholder="目标行业" />
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="typicalClient">典型客户</label>
+                <textarea id="typicalClient" name="typicalClient" class="apply-field__textarea" rows="3" placeholder="典型客户列表或描述"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="landingCase">落地案例</label>
+                <textarea id="landingCase" name="landingCase" class="apply-field__textarea" rows="4" placeholder="落地案例说明"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="marketScale">市场规模分析</label>
+                <textarea id="marketScale" name="marketScale" class="apply-field__textarea" rows="4" placeholder="市场规模分析"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="competitor">竞争对手分析</label>
+                <textarea id="competitor" name="competitor" class="apply-field__textarea" rows="4" placeholder="竞争对手分析"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="bizModel">商业模式</label>
+                <textarea id="bizModel" name="bizModel" class="apply-field__textarea" rows="4" placeholder="商业模式说明"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="economicEffect">经济效益预测</label>
+                <textarea id="economicEffect" name="economicEffect" class="apply-field__textarea" rows="3" placeholder="经济效益预测"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="socialEffect">社会效益说明</label>
+                <textarea id="socialEffect" name="socialEffect" class="apply-field__textarea" rows="4" placeholder="社会效益说明"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tab 6: 评估相关属性 -->
+          <section id="panel-6" class="apply-panel" role="tabpanel" aria-labelledby="tab-6">
+            <h2 class="apply-panel__title">评估相关</h2>
+            <div class="apply-fields">
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="selfConclusion">成果自评估结论</label>
+                <textarea id="selfConclusion" name="selfConclusion" class="apply-field__textarea" rows="5" placeholder="成果自评估结论"></textarea>
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="selfLevel">自评估等级</label>
+                <input id="selfLevel" name="selfLevel" type="text" class="apply-field__input" placeholder="自评估等级" />
+              </div>
+              <div class="apply-field">
+                <label class="apply-field__label" for="evalCategory">申请评估类别</label>
+                <input id="evalCategory" name="evalCategory" type="text" class="apply-field__input" placeholder="申请评估类别" />
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="evalDimensions">希望评估维度</label>
+                <textarea id="evalDimensions" name="evalDimensions" class="apply-field__textarea" rows="4" placeholder="希望评估的维度说明"></textarea>
+              </div>
+              <div class="apply-field apply-field--full">
+                <label class="apply-field__label" for="extraNote">补充说明</label>
+                <textarea id="extraNote" name="extraNote" class="apply-field__textarea" rows="5" placeholder="补充说明"></textarea>
+              </div>
+            </div>
+          </section>
+          </form>
+            </main>
+            <aside class="apply-anchor" aria-label="章节导航">
+              <nav class="apply-anchor__nav">
+                <a href="#panel-1" class="apply-anchor__link apply-anchor__link--active">基础身份</a>
+                <a href="#panel-2" class="apply-anchor__link">核心描述</a>
+                <a href="#panel-3" class="apply-anchor__link">技术与成果</a>
+                <a href="#panel-4" class="apply-anchor__link">知识产权</a>
+                <a href="#panel-5" class="apply-anchor__link">市场与应用</a>
+                <a href="#panel-6" class="apply-anchor__link">评估相关</a>
+              </nav>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="apply-actions-wrap">
+    <div class="apply-actions-inner">
+      <a href="dashboard-projects.html" class="apply-btn apply-btn--secondary">取消</a>
+      <button type="button" id="btnSaveOnly" class="apply-btn apply-btn--secondary">仅保存</button>
+      <button type="submit" form="projectAchievementForm" class="apply-btn apply-btn--primary">提交申请</button>
+    </div>
+  </div>
+
+  <script src="./project-achievement-apply.js"></script>
+</body>
+</html>

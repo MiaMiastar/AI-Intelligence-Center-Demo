@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="项目详情 - 查看项目基础信息、核心描述、技术与成果、知识产权、市场应用及评估相关信息。" />
+  <title>项目详情 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./dashboard.css" />
+  <link rel="stylesheet" href="./project-achievement-apply.css" />
+  <link rel="stylesheet" href="./project-detail.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="主导航">
+      <div class="dashboard-sidebar__top">
+        <a href="dashboard.html" class="dashboard-logo" title="链域智汇 工作台"><span class="dashboard-logo__mark">链</span></a>
+        <div class="dashboard-sidebar__brand-wrap">
+          <span class="dashboard-sidebar__brand">链域智汇</span>
+        </div>
+      </div>
+      <nav class="dashboard-nav" aria-label="功能菜单">
+        <a href="dashboard-experts.html" class="dashboard-nav__item" title="专家智库">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.2"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/></svg></span>
+          <span class="dashboard-nav__label">专家智库</span>
+        </a>
+        <a href="dashboard-projects.html" class="dashboard-nav__item dashboard-nav__item--active" title="项目成果">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></span>
+          <span class="dashboard-nav__label">项目成果</span>
+        </a>
+        <a href="index.html#/academy" class="dashboard-nav__item" title="我的学习">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></span>
+          <span class="dashboard-nav__label">我的学习</span>
+        </a>
+      </nav>
+      <div class="dashboard-sidebar__bottom">
+        <div class="dashboard-sidebar__user" id="dashboard-sidebar-user">
+          <span class="dashboard-sidebar__user-avatar"><span id="dashboard-avatar-letter" class="dashboard-avatar__letter">M</span></span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <div class="dashboard-content dashboard-content--apply">
+        <header class="apply-hero">
+          <a href="dashboard-projects.html" class="apply-hero__back">← 返回项目成果</a>
+          <h1 class="apply-hero__title">项目详情</h1>
+          <p class="apply-hero__subtitle">查看项目基础身份、核心描述、技术与成果、知识产权、市场应用及评估相关信息</p>
+        </header>
+
+        <div class="apply-form">
+          <div class="apply-body">
+            <main class="apply-main">
+              <div id="projectDetailContent">
+                <section id="panel-1" class="apply-panel apply-panel--active" role="tabpanel">
+                  <h2 class="apply-panel__title">基础身份</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field"><span class="apply-field__label">项目名称</span><p class="apply-field__value" data-field="projectName">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">项目编号</span><p class="apply-field__value" data-field="projectCode">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">所属单位</span><p class="apply-field__value" data-field="belongUnit">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">申报部门</span><p class="apply-field__value" data-field="applyDept">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">项目负责人</span><p class="apply-field__value" data-field="projectLeader">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">联系人</span><p class="apply-field__value" data-field="contactPerson">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">联系方式</span><p class="apply-field__value" data-field="contactInfo">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">申报时间</span><p class="apply-field__value" data-field="applyTime">—</p></div>
+                  </div>
+                </section>
+                <section id="panel-2" class="apply-panel" role="tabpanel">
+                  <h2 class="apply-panel__title">核心描述</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">项目背景</span><p class="apply-field__value apply-field__value--block" data-field="projectBackground">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">项目目标</span><p class="apply-field__value apply-field__value--block" data-field="projectGoal">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">项目描述</span><p class="apply-field__value apply-field__value--block" data-field="projectDesc">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">技术路线</span><p class="apply-field__value apply-field__value--block" data-field="techRoute">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">核心技术创新点</span><p class="apply-field__value apply-field__value--block" data-field="techInnovation">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">解决的关键问题</span><p class="apply-field__value apply-field__value--block" data-field="keyProblems">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">技术成熟度（TRL）</span><p class="apply-field__value" data-field="trlLevel">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">项目阶段</span><p class="apply-field__value" data-field="projectStage">—</p></div>
+                  </div>
+                </section>
+                <section id="panel-3" class="apply-panel" role="tabpanel">
+                  <h2 class="apply-panel__title">技术与成果</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">成果类型</span><p class="apply-field__value" data-field="resultType">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">技术架构说明</span><p class="apply-field__value apply-field__value--block" data-field="techArch">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">系统部署形态</span><p class="apply-field__value" data-field="deployForm">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">性能指标</span><p class="apply-field__value apply-field__value--block" data-field="perfMetrics">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">测试结果说明</span><p class="apply-field__value apply-field__value--block" data-field="testResult">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">测试报告附件</span><p class="apply-field__value" data-field="testReport">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">用户手册附件</span><p class="apply-field__value" data-field="userManual">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">技术文档附件</span><p class="apply-field__value" data-field="techDoc">—</p></div>
+                  </div>
+                </section>
+                <section id="panel-4" class="apply-panel" role="tabpanel">
+                  <h2 class="apply-panel__title">知识产权</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">专利情况</span><p class="apply-field__value apply-field__value--block" data-field="patentInfo">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">软件著作权</span><p class="apply-field__value apply-field__value--block" data-field="softwareCopyright">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">论文发表情况</span><p class="apply-field__value apply-field__value--block" data-field="paperPublish">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">知识产权归属</span><p class="apply-field__value apply-field__value--block" data-field="ipOwnership">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">是否存在权属争议</span><p class="apply-field__value" data-field="ipDispute">—</p></div>
+                  </div>
+                </section>
+                <section id="panel-5" class="apply-panel" role="tabpanel">
+                  <h2 class="apply-panel__title">市场与应用</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">应用场景</span><p class="apply-field__value apply-field__value--block" data-field="appScenario">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">目标行业</span><p class="apply-field__value" data-field="targetIndustry">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">典型客户</span><p class="apply-field__value apply-field__value--block" data-field="typicalClient">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">落地案例</span><p class="apply-field__value apply-field__value--block" data-field="landingCase">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">市场规模分析</span><p class="apply-field__value apply-field__value--block" data-field="marketScale">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">竞争对手分析</span><p class="apply-field__value apply-field__value--block" data-field="competitor">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">商业模式</span><p class="apply-field__value apply-field__value--block" data-field="bizModel">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">经济效益预测</span><p class="apply-field__value apply-field__value--block" data-field="economicEffect">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">社会效益说明</span><p class="apply-field__value apply-field__value--block" data-field="socialEffect">—</p></div>
+                  </div>
+                </section>
+                <section id="panel-6" class="apply-panel" role="tabpanel">
+                  <h2 class="apply-panel__title">评估相关</h2>
+                  <div class="apply-fields">
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">成果自评估结论</span><p class="apply-field__value apply-field__value--block" data-field="selfConclusion">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">自评估等级</span><p class="apply-field__value" data-field="selfLevel">—</p></div>
+                    <div class="apply-field"><span class="apply-field__label">申请评估类别</span><p class="apply-field__value" data-field="evalCategory">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">希望评估维度</span><p class="apply-field__value apply-field__value--block" data-field="evalDimensions">—</p></div>
+                    <div class="apply-field apply-field--full"><span class="apply-field__label">补充说明</span><p class="apply-field__value apply-field__value--block" data-field="extraNote">—</p></div>
+                  </div>
+                </section>
+              </div>
+            </main>
+            <aside class="apply-anchor" aria-label="章节导航">
+              <nav class="apply-anchor__nav">
+                <a href="#panel-1" class="apply-anchor__link apply-anchor__link--active">基础身份</a>
+                <a href="#panel-2" class="apply-anchor__link">核心描述</a>
+                <a href="#panel-3" class="apply-anchor__link">技术与成果</a>
+                <a href="#panel-4" class="apply-anchor__link">知识产权</a>
+                <a href="#panel-5" class="apply-anchor__link">市场与应用</a>
+                <a href="#panel-6" class="apply-anchor__link">评估相关</a>
+              </nav>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-detail-actions">
+    <div class="apply-actions-inner">
+      <a href="dashboard-projects.html" class="apply-btn apply-btn--secondary">返回列表</a>
+      <a href="project-achievement-apply.html" id="btnEdit" class="apply-btn apply-btn--primary">编辑申请</a>
+    </div>
+  </div>
+
+  <script src="./project-detail.js"></script>
+</body>
+</html>

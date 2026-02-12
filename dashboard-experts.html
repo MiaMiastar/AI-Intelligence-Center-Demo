@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="工作台 · 专家智库：按能力方向与经验标签快速定位供应链领域专家，支持搜索、筛选与预约咨询。" />
+  <title>专家智库 - 工作台 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <!-- 左侧边栏 -->
+    <aside class="dashboard-sidebar" aria-label="主导航">
+      <div class="dashboard-sidebar__top">
+        <a href="dashboard.html" class="dashboard-logo" title="链域智汇 工作台">
+          <span class="dashboard-logo__mark">链</span>
+        </a>
+        <div class="dashboard-sidebar__brand-wrap">
+          <span class="dashboard-sidebar__brand">链域智汇</span>
+        </div>
+      </div>
+      <hr class="dashboard-sidebar__divider" aria-hidden="true" />
+      <nav class="dashboard-nav" aria-label="功能菜单">
+        <a href="dashboard-experts.html" class="dashboard-nav__item dashboard-nav__item--active" title="专家智库">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/></svg>
+          </span>
+          <span class="dashboard-nav__label">专家智库</span>
+        </a>
+        <a href="dashboard-projects.html" class="dashboard-nav__item" title="项目成果">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
+          </span>
+          <span class="dashboard-nav__label">项目成果</span>
+        </a>
+        <a href="dashboard-learning.html" class="dashboard-nav__item" title="我的学习">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg>
+          </span>
+          <span class="dashboard-nav__label">我的学习</span>
+        </a>
+      </nav>
+      <div class="dashboard-sidebar__bottom">
+        <div class="dashboard-sidebar__user" id="dashboard-sidebar-user">
+          <span class="dashboard-sidebar__user-avatar" id="dashboard-sidebar-avatar">
+            <span id="dashboard-avatar-letter" class="dashboard-avatar__letter">M</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容区：仅专家智库 -->
+    <div class="dashboard-main">
+      <div class="dashboard-content dashboard-content--experts">
+        <div class="dashboard-view dashboard-view--experts">
+          <div class="experts-hero-band experts-hero-band--in-dashboard">
+            <div class="container experts-hero-band__inner">
+              <h1 class="experts-hero-band__title">精准匹配与您项目高度契合的行业专家</h1>
+              <div class="experts-hero-band__search">
+                <span class="experts-hero-band__search-icon" aria-hidden="true">⚡</span>
+                <input id="expertNeedInput" class="experts-hero-band__input" type="text" placeholder="描述您的需求，例如：'寻找熟悉国企供应链规划的专家'…" autocomplete="off" aria-label="描述需求以获取推荐" />
+                <button type="button" id="expertRecommendBtn" class="experts-hero-band__btn">AI 智能匹配 →</button>
+              </div>
+              <p class="experts-hero-band__attribution">由 AI 驱动，深度解析项目需求与专家履历，自动匹配高契合度专家推荐。</p>
+            </div>
+          </div>
+          <div class="experts-layout">
+            <aside class="experts-sidebar">
+              <div class="experts-sidebar__block">
+                <h2 class="experts-sidebar__title experts-sidebar__title--status">
+                  状态
+                </h2>
+                <div class="chip-group chip-group--vertical chip-group--status" id="expertStatusFilters" role="group" aria-label="按状态筛选">
+                  <button type="button" class="chip chip--status" data-status="favorited" aria-pressed="false">已收藏</button>
+                  <button type="button" class="chip chip--status" data-status="cooperated" aria-pressed="false">已合作</button>
+                </div>
+              </div>
+              <div class="experts-sidebar__block">
+                <h2 class="experts-sidebar__title">
+                  <span class="experts-sidebar__icon" aria-hidden="true">◇</span>
+                  标签筛选
+                </h2>
+                <div class="chip-group chip-group--vertical" id="expertFilters" role="group" aria-label="按领域筛选"></div>
+              </div>
+            </aside>
+            <div class="experts-main">
+              <div class="expert-search-bar" role="search" aria-label="搜索专家">
+                <div class="expert-search-bar__input-wrap">
+                  <span class="expert-search-bar__icon" aria-hidden="true">🔍</span>
+                  <input id="expertSearch" class="expert-search-bar__input" type="search" placeholder="搜索专家姓名、职位或技能…" autocomplete="off" aria-label="搜索专家" />
+                </div>
+                <div class="expert-search-bar__meta">
+                  <p id="expertResultCount" class="expert-result-count" aria-live="polite"></p>
+                  <div class="select-row">
+                    <label class="select-label" for="expertSort">排序</label>
+                    <select id="expertSort" class="select" aria-label="排序方式">
+                      <option value="recommended">推荐度</option>
+                      <option value="name">姓名</option>
+                      <option value="byNeed">按需求匹配</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="expertState"></div>
+              <div id="expertGrid" class="grid grid-3 expert-grid" role="list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dashboard-experts.js"></script>
+  <script src="./experts.js"></script>
+</body>
+</html>

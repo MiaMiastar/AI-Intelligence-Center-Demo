@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="我的学习 · 工作台：已加入课程、学习进度与证书管理。" />
+  <title>我的学习 - 工作台 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <!-- 左侧边栏 -->
+    <aside class="dashboard-sidebar" aria-label="主导航">
+      <div class="dashboard-sidebar__top">
+        <a href="dashboard.html" class="dashboard-logo" title="链域智汇 工作台">
+          <span class="dashboard-logo__mark">链</span>
+        </a>
+        <div class="dashboard-sidebar__brand-wrap">
+          <span class="dashboard-sidebar__brand">链域智汇</span>
+        </div>
+      </div>
+      <hr class="dashboard-sidebar__divider" aria-hidden="true" />
+      <nav class="dashboard-nav" aria-label="功能菜单">
+        <a href="dashboard-experts.html" class="dashboard-nav__item" title="专家智库">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="18" cy="5" r="1.8" fill="currentColor"/></svg>
+          </span>
+          <span class="dashboard-nav__label">专家智库</span>
+        </a>
+        <a href="dashboard-projects.html" class="dashboard-nav__item" title="项目成果">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
+          </span>
+          <span class="dashboard-nav__label">项目成果</span>
+        </a>
+        <a href="dashboard-learning.html" class="dashboard-nav__item dashboard-nav__item--active" title="我的学习">
+          <span class="dashboard-nav__icon dashboard-nav__icon--svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg>
+          </span>
+          <span class="dashboard-nav__label">我的学习</span>
+        </a>
+      </nav>
+      <div class="dashboard-sidebar__bottom">
+        <div class="dashboard-sidebar__user" id="dashboard-sidebar-user">
+          <span class="dashboard-sidebar__user-avatar" id="dashboard-sidebar-avatar">
+            <span id="dashboard-avatar-letter" class="dashboard-avatar__letter">M</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容区：我的学习 -->
+    <div class="dashboard-main">
+      <div class="dashboard-content dashboard-content--learning">
+        <div class="dashboard-view dashboard-view--learning">
+          <header class="dashboard-learning-page-hero">
+            <div class="dashboard-learning-page-hero__text">
+              <h1 class="dashboard-learning-page-hero__title">我的学习</h1>
+              <p class="dashboard-learning-page-hero__subtitle">管理已加入的课程与学习进度，查看行业报告与白皮书。</p>
+            </div>
+            <a href="index.html#/academy" class="dashboard-learning-page-hero__btn">培训学院</a>
+          </header>
+          <!-- 简易 Tab：我的课程 | 行业报告 -->
+          <div class="dashboard-learning-main-tabs" role="tablist" aria-label="学习内容">
+            <button type="button" class="dashboard-learning-main-tab dashboard-learning-main-tab--active" role="tab" aria-selected="true" data-learning-tab="courses">我的课程</button>
+            <button type="button" class="dashboard-learning-main-tab" role="tab" aria-selected="false" data-learning-tab="reports">行业报告</button>
+          </div>
+
+          <!-- 我的课程 -->
+          <section id="learningTabCourses" class="dashboard-learning-tab-panel" role="tabpanel" aria-labelledby="learning-courses-heading">
+            <h2 id="learning-courses-heading" class="dashboard-learning-section__title">我的课程</h2>
+            <p class="dashboard-learning-section__subtitle">已加入课程与学习进度</p>
+            <div id="learningCoursesPanel" class="dashboard-learning-panel">
+              <div id="learningState" class="dashboard-learning-state"></div>
+              <div id="learningGrid" class="dashboard-learning-grid" role="list"></div>
+            </div>
+          </section>
+
+          <!-- 行业报告 -->
+          <section id="learningTabReports" class="dashboard-learning-tab-panel dashboard-learning-tab-panel--hidden" role="tabpanel" aria-labelledby="learning-reports-heading">
+            <h2 id="learning-reports-heading" class="dashboard-learning-section__title">行业报告</h2>
+            <p class="dashboard-learning-section__subtitle">数据洞察与行业白皮书</p>
+            <div id="learningReportsGrid" class="dashboard-learning-reports-grid" role="list"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dashboard-learning.js"></script>
+</body>
+</html>

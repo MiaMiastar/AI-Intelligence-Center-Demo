@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>登录 - 链域智汇</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="auth-fullpage">
+  <div class="auth-layout">
+    <div class="auth-brand-panel">
+      <a href="index.html" class="auth-brand-logo">
+        <span class="auth-brand-logo-mark"></span>
+        <span class="auth-brand-logo-text">链域智汇</span>
+      </a>
+      <div class="auth-brand-copy">
+        <h1 class="auth-brand-title">面向供应链行业的智能决策与能力赋能平台</h1>
+        <p class="auth-brand-lead">专家智库驱动 · 项目方法沉淀 · 体系化培训赋能</p>
+      </div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth-tab="code">验证码登录</button>
+          <button type="button" class="auth-tab" data-auth-tab="password">密码登录</button>
+        </div>
+        <form class="auth-form" id="loginForm" novalidate>
+          <div class="auth-tab-pane" id="loginPaneCode">
+            <div class="form-group">
+              <div class="auth-input-wrap auth-input-underline">
+                <span class="auth-input-icon" aria-hidden="true">📱</span>
+                <span class="auth-input-prefix">+86</span>
+                <input type="tel" id="loginPhone" class="form-input" name="phone" placeholder="手机号" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="auth-code-row auth-input-underline">
+                <span class="auth-input-icon" aria-hidden="true">🔒</span>
+                <input type="text" id="loginCode" class="form-input" name="code" placeholder="请填写验证码" maxlength="6" />
+                <span class="auth-code-divider" aria-hidden="true"></span>
+                <button type="button" class="auth-get-code" id="loginGetCode">获取验证码</button>
+              </div>
+            </div>
+          </div>
+          <div class="auth-tab-pane" id="loginPanePassword" style="display:none">
+            <div class="form-group">
+              <div class="auth-input-wrap auth-input-underline">
+                <span class="auth-input-icon" aria-hidden="true">📱</span>
+                <input type="text" id="loginAccount" class="form-input" name="account" placeholder="手机号 / 邮箱" autocomplete="username" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="auth-input-wrap auth-input-underline">
+                <span class="auth-input-icon" aria-hidden="true">🔒</span>
+                <input type="password" id="loginPassword" class="form-input" name="password" placeholder="请输入密码" autocomplete="current-password" />
+              </div>
+            </div>
+          </div>
+          <div class="auth-options">
+            <label>
+              <input type="checkbox" name="remember" checked />
+              14天内免登录
+            </label>
+            <a href="#">忘记密码</a>
+          </div>
+          <button type="submit" class="btn-submit">登录</button>
+        </form>
+        <p class="auth-agreement">
+          未注册的手机号验证并登录后将自动完成注册，注册即代表您同意并接受
+          <a href="#">《平台服务协议》</a><a href="#">《个人信息保护政策》</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll(".auth-tab");
+      var paneCode = document.getElementById("loginPaneCode");
+      var panePassword = document.getElementById("loginPanePassword");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var isCode = tab.getAttribute("data-auth-tab") === "code";
+          tabs.forEach(function (t) { t.classList.remove("active"); });
+          tab.classList.add("active");
+          paneCode.style.display = isCode ? "" : "none";
+          panePassword.style.display = isCode ? "none" : "";
+        });
+      });
+      document.getElementById("loginGetCode").addEventListener("click", function () {
+        var phone = document.getElementById("loginPhone").value.trim();
+        if (!phone) { alert("请先输入手机号"); return; }
+        alert("验证码为演示功能，请对接短信接口。");
+      });
+      document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var activeTab = document.querySelector(".auth-tab.active");
+        var account = "";
+        if (activeTab.getAttribute("data-auth-tab") === "code") {
+          var phone = document.getElementById("loginPhone").value.trim();
+          var code = document.getElementById("loginCode").value.trim();
+          if (!phone) { alert("请输入手机号"); return; }
+          if (!code) { alert("请填写验证码"); return; }
+          account = phone;
+        } else {
+          account = document.getElementById("loginAccount").value.trim();
+          var password = document.getElementById("loginPassword").value;
+          if (!account) { alert("请输入手机号或邮箱"); return; }
+          if (!password) { alert("请输入密码"); return; }
+        }
+        try { localStorage.setItem("auth_user", account); } catch (err) {}
+        window.location.href = "dashboard-experts.html";
+      });
+    })();
+  </script>
+</body>
+</html>

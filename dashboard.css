@@ -1,0 +1,1803 @@
+/* 工作台独立布局：左侧边栏 + 主内容区，风格参考 Intern Discovery */
+
+.dashboard-body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #f8fafc;
+  color: #0f1a2b;
+}
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========== 左侧边栏 ========== */
+.dashboard-sidebar {
+  width: 72px;
+  min-width: 72px;
+  height: 100vh;
+  max-height: 100vh;
+  background: #fff;
+  border-right: 1px solid rgba(15, 47, 109, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+
+.dashboard-sidebar__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.dashboard-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.dashboard-sidebar__brand-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.dashboard-sidebar__brand {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f2f6d;
+  letter-spacing: 0.02em;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 企业端标识：突出为当前入口 */
+.dashboard-sidebar__portal-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.35);
+}
+
+/* 顶部/品牌 与 中间导航 之间的分隔线 */
+.dashboard-sidebar__divider {
+  width: 40px;
+  margin: 0 auto 16px;
+  border: none;
+  border-top: 1px solid rgba(15, 47, 109, 0.12);
+  flex-shrink: 0;
+}
+
+.dashboard-btn-new {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px dashed rgba(15, 47, 109, 0.25);
+  background: #fff;
+  color: #4c5c74;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dashboard-btn-new:hover {
+  border-color: #1f4aa5;
+  background: #eff6ff;
+}
+
+.dashboard-btn-new__icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.dashboard-btn-new__text {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.dashboard-btn-menu {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #4c5c74;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dashboard-btn-menu:hover {
+  background: #f1f5f9;
+}
+
+.dashboard-nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashboard-nav__item {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #4c5c74;
+  text-decoration: none;
+  font-size: 10px;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.dashboard-nav__item:hover {
+  background: #f1f5f9;
+  color: #0f2f6d;
+}
+
+.dashboard-nav__item--active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.dashboard-nav__icon {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.dashboard-nav__icon--svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.dashboard-nav__icon--svg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dashboard-nav__label {
+  margin-top: 2px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-nav__item--bell .dashboard-nav__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  border-radius: 7px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-nav__item--avatar {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  color: #4c5c74;
+}
+
+.dashboard-nav__item--avatar .dashboard-nav__icon--svg {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #93c5fd, #3b82f6);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-avatar__letter {
+  display: block;
+  line-height: 1;
+}
+
+.dashboard-sidebar__bottom {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(15, 47, 109, 0.08);
+}
+
+.dashboard-sidebar__user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+}
+
+.dashboard-sidebar__user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #93c5fd, #3b82f6);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dashboard-sidebar__user-avatar .dashboard-avatar__letter {
+  display: block;
+  line-height: 1;
+}
+
+.dashboard-sidebar__user-label {
+  font-size: 10px;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.dashboard-sidebar__user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f2f6d;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.dashboard-sidebar__user-desc {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.dashboard-sidebar__logout {
+  margin-top: 2px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #64748b;
+  background: transparent;
+  border: 1px solid rgba(15, 47, 109, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.dashboard-sidebar__logout:hover {
+  color: #dc2626;
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+
+/* ========== 主内容区 ========== */
+.dashboard-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #f8fafc;
+  overflow-y: auto;
+}
+
+/* 顶部公告栏 */
+.dashboard-topbar {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.dashboard-topbar.dashboard-topbar--hidden {
+  display: none;
+}
+
+.dashboard-topbar__close {
+  background: none;
+  border: none;
+  color: #1e40af;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.dashboard-topbar__close:hover {
+  opacity: 0.8;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 32px 48px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 专家智库视图：放宽以容纳侧栏+1200px 卡片区，与独立专家页卡片尺寸一致，去掉头部空白 */
+.dashboard-content--experts {
+  max-width: min(1428px, 96vw);
+  padding-top: 0;
+}
+
+/* 工作台内专家页：深色 AI 区横向铺满视口 */
+.dashboard-view--experts .experts-hero-band--in-dashboard {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* 专家智库页：列表区头部（搜索+排序）吸顶 */
+.dashboard-view--experts .expert-search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(6, 21, 45, 0.06);
+}
+
+/* 主标题区 */
+.dashboard-hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-hero__subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* 输入与模式 */
+.dashboard-query {
+  margin-bottom: 28px;
+}
+
+.dashboard-query__box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.dashboard-query__input {
+  width: 100%;
+  padding: 18px 20px 12px;
+  border: none;
+  font-size: 15px;
+  color: #0f1a2b;
+  background: transparent;
+  outline: none;
+}
+
+.dashboard-query__input::placeholder {
+  color: #94a3b8;
+}
+
+.dashboard-query__bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px 14px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.dashboard-query__mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dashboard-query__mode:hover {
+  background: #f1f5f9;
+  color: #0f1a2b;
+}
+
+.dashboard-query__mode--active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.dashboard-query__mode-icon {
+  font-size: 14px;
+}
+
+.dashboard-query__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dashboard-query__action {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.dashboard-query__action:hover {
+  background: #f1f5f9;
+}
+
+.dashboard-query__action--send {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.dashboard-query__action--send:hover {
+  background: #2563eb;
+}
+
+/* 推荐话题 */
+.dashboard-suggest {
+  margin-bottom: 36px;
+}
+
+.dashboard-suggest__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 12px;
+}
+
+.dashboard-suggest__label {
+  font-size: 13px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.dashboard-suggest__tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 13px;
+  color: #334155;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dashboard-suggest__tag:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+/* 探索更多 */
+.dashboard-explore {
+  margin-bottom: 40px;
+}
+
+.dashboard-explore__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f1a2b;
+  margin: 0 0 16px;
+}
+
+.dashboard-explore__title-icon {
+  color: #3b82f6;
+}
+
+.dashboard-explore__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-explore__card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.dashboard-explore__card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+}
+
+.dashboard-explore__card-media {
+  height: 100px;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.dashboard-explore__card-media--experts {
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+}
+
+.dashboard-explore__card-media--projects {
+  background: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 100%);
+}
+
+.dashboard-explore__card-media--academy {
+  background: linear-gradient(135deg, #cffafe 0%, #67e8f9 100%);
+}
+
+.dashboard-explore__card-body {
+  padding: 14px 16px;
+}
+
+.dashboard-explore__card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f1a2b;
+  margin: 0 0 4px;
+}
+
+.dashboard-explore__card-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* 欢迎与下方区块 */
+.dashboard-welcome {
+  margin-bottom: 24px;
+}
+
+.dashboard-welcome__text {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.dashboard-section {
+  margin-bottom: 28px;
+  position: relative;
+  padding-top: 8px;
+}
+
+.dashboard-section__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f1a2b;
+  margin: 0 0 12px;
+}
+
+.dashboard-section__link {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  font-size: 13px;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.dashboard-section__link:hover {
+  text-decoration: underline;
+}
+
+.dashboard-experts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dashboard-experts-grid .expert-card {
+  min-height: auto;
+}
+
+.dashboard-project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-project-list .dashboard-project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: #0f1a2b;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dashboard-project-list .dashboard-project-item:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.dashboard-project-list .muted {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ========== 项目成果视图 ========== */
+.dashboard-content--projects {
+  max-width: min(1200px, 96vw);
+}
+
+.dashboard-view--projects {
+  padding-top: 0;
+}
+
+.dashboard-projects-hero {
+  margin-bottom: 24px;
+}
+
+.dashboard-projects-hero__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-projects-hero__subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.dashboard-projects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.dashboard-projects-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.dashboard-projects-search {
+  flex: 0 1 auto;
+  width: 280px;
+  max-width: 100%;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.dashboard-projects-search__icon {
+  margin-right: 8px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.dashboard-projects-search__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #0f1a2b;
+  background: transparent;
+}
+
+.dashboard-projects-search__input::placeholder {
+  color: #94a3b8;
+}
+
+.dashboard-projects-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-projects-count {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.dashboard-projects-select {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #334155;
+  background: #fff;
+  cursor: pointer;
+}
+
+.dashboard-projects-btn-add {
+  display: inline-block;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: #3b82f6;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dashboard-projects-btn-add:hover {
+  background: #2563eb;
+}
+
+.dashboard-projects-state {
+  margin-bottom: 16px;
+}
+
+.dashboard-projects-state--visible .dashboard-projects-empty {
+  display: block;
+}
+
+.dashboard-projects-empty {
+  display: none;
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px dashed #e2e8f0;
+  margin: 0;
+}
+
+.dashboard-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-project-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.dashboard-project-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+
+/* 右上角彩色强调条（专家评审=橙，待初审=蓝） */
+.dashboard-project-card--accent-orange::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 48px;
+  background: #f97316;
+  border-radius: 0 14px 0 0;
+}
+
+.dashboard-project-card--accent-blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 48px;
+  background: #3b82f6;
+  border-radius: 0 14px 0 0;
+}
+
+/* 顶部行：状态（左）+ 部署形态（右） */
+.dashboard-project-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.dashboard-project-card__status-wrap {
+  flex-shrink: 0;
+}
+
+.dashboard-project-card__status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.dashboard-project-card__status--未提交 {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.dashboard-project-card__status--待初审 {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.dashboard-project-card__status--初审中 {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+.dashboard-project-card__status--初审未通过 {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.dashboard-project-card__status--专家评审 {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.dashboard-project-card__status--审核未通过 {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.dashboard-project-card__status--审核通过 {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.dashboard-project-card__status--已归档 {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.dashboard-project-card__deploy {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #64748b;
+  padding: 2px 0;
+}
+
+/* 项目名称 */
+.dashboard-project-card__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+/* 所属单位（带建筑图标） */
+.dashboard-project-card__unit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.dashboard-project-card__icon {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+/* 属性标签：TRL、等级、阶段 */
+.dashboard-project-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.dashboard-project-card__badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #e0e7ff;
+  color: #3730a3;
+  white-space: nowrap;
+}
+
+/* 项目描述 */
+.dashboard-project-card__value {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+/* 成果类型：小圆点 + 文案 */
+.dashboard-project-card__solutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-bottom: 10px;
+}
+
+.dashboard-project-card__solution {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.dashboard-project-card__solution-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94a3b8;
+  flex-shrink: 0;
+}
+
+/* 落地案例 + 典型客户 + 关键指标（卡片内嵌统计块） */
+.dashboard-project-card__stats {
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.dashboard-project-card__stats-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+.dashboard-project-card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard-project-card__stat-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.dashboard-project-card__stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f1a2b;
+  line-height: 1.3;
+}
+
+.dashboard-project-card__stat-num {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.dashboard-project-card__stat-unit {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f1a2b;
+}
+
+.dashboard-project-card__stats-sep {
+  height: 0;
+  margin: 12px 0;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.dashboard-project-card__stats-bottom {
+  padding-top: 2px;
+}
+
+.dashboard-project-card__stats-bottom .dashboard-project-card__metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.dashboard-project-card__stats-bottom .dashboard-project-card__metric-icon {
+  flex-shrink: 0;
+  color: #22c55e;
+}
+
+/* 底部：日期 + 查看详情 */
+.dashboard-project-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding-top: 12px;
+  margin-top: auto;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12px;
+}
+
+.dashboard-project-card__metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #15803d;
+  font-weight: 500;
+}
+
+.dashboard-project-card__metric-icon {
+  flex-shrink: 0;
+  color: #22c55e;
+}
+
+.dashboard-project-card__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+}
+
+.dashboard-project-card__date-icon {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.dashboard-project-card__link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3b82f6;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.dashboard-project-card__link:hover {
+  text-decoration: underline;
+}
+
+/* ========== 我的学习视图 ========== */
+.dashboard-content--learning {
+  max-width: min(1100px, 96vw);
+  background: #f8fafc;
+}
+
+.dashboard-view--learning {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.dashboard-learning-hero {
+  background: linear-gradient(135deg, #1f4aa5 0%, #0f2f6d 100%);
+  color: #fff;
+  margin-left: -48px;
+  margin-right: -48px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 24px 48px;
+  box-shadow: 0 2px 8px rgba(15, 47, 109, 0.25);
+}
+
+.dashboard-learning-hero__inner {
+  max-width: min(1000px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dashboard-learning-hero__user {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-learning-hero__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.dashboard-learning-hero__text {
+  min-width: 0;
+}
+
+.dashboard-learning-hero__greeting {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.dashboard-learning-hero__quote {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dashboard-learning-hero__back {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dashboard-learning-hero__back:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 页面标题与副标题 */
+.dashboard-learning-page-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.dashboard-learning-page-hero__text {
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-learning-page-hero__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-learning-page-hero__subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.dashboard-learning-page-hero__btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #3b82f6;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dashboard-learning-page-hero__btn:hover {
+  background: #2563eb;
+}
+
+/* 简易 Tab：我的课程 | 行业报告 */
+.dashboard-learning-main-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 0;
+}
+
+.dashboard-learning-main-tab {
+  padding: 12px 20px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.dashboard-learning-main-tab:hover {
+  color: #0f1a2b;
+}
+
+.dashboard-learning-main-tab--active {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+.dashboard-learning-tab-panel {
+  display: block;
+  padding-top: 20px;
+}
+
+.dashboard-learning-tab-panel--hidden {
+  display: none;
+}
+
+.dashboard-learning-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dashboard-learning-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.dashboard-learning-tab {
+  padding: 0 0 4px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.dashboard-learning-tab:hover {
+  color: #0f1a2b;
+}
+
+.dashboard-learning-tab--active {
+  color: #1d4ed8;
+}
+
+.dashboard-learning-tab--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: #1d4ed8;
+}
+
+.dashboard-learning-search-wrap {
+  position: relative;
+  min-width: 200px;
+  width: 280px;
+}
+
+.dashboard-learning-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.dashboard-learning-search__input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f1a2b;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dashboard-learning-search__input:focus {
+  border-color: #1d4ed8;
+  background: #fff;
+}
+
+.dashboard-learning-search__input::placeholder {
+  color: #94a3b8;
+}
+
+.dashboard-learning-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 12px 0;
+  background: #fff;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.dashboard-learning-filters-label {
+  color: #64748b;
+}
+
+.dashboard-learning-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-learning-filter {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.dashboard-learning-filter:hover {
+  color: #0f1a2b;
+}
+
+.dashboard-learning-filter--active {
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+.dashboard-learning-filter-sep {
+  color: #e2e8f0;
+  user-select: none;
+}
+
+.dashboard-learning-filters-link {
+  margin-left: auto;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.dashboard-learning-filters-link:hover {
+  text-decoration: underline;
+}
+
+.dashboard-learning-panel {
+  flex: 1;
+  padding: 0 0 32px;
+}
+
+.dashboard-learning-panel--hidden {
+  display: none;
+}
+
+.dashboard-learning-state {
+  margin-bottom: 16px;
+}
+
+.dashboard-learning-state--visible .dashboard-learning-empty {
+  display: block;
+}
+
+.dashboard-learning-empty {
+  display: none;
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px dashed #e2e8f0;
+  margin: 0;
+}
+
+.dashboard-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-learning-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-learning-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.dashboard-learning-card__thumb {
+  height: 160px;
+  background: linear-gradient(135deg, #1f4aa5 0%, #0f2f6d 100%);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  position: relative;
+}
+
+.dashboard-learning-card__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.dashboard-learning-card__thumb-title {
+  font-size: 12px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.dashboard-learning-card__thumb-sub {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 4px 0 0;
+}
+
+.dashboard-learning-card__thumb-banner {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+  align-self: flex-start;
+}
+
+.dashboard-learning-card__body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-learning-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dashboard-learning-card__progress {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px;
+}
+
+.dashboard-learning-card__btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #3b82f6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboard-learning-card__btn:hover {
+  background: #2563eb;
+}
+
+.dashboard-learning-placeholder {
+  text-align: center;
+  padding: 48px 24px;
+  font-size: 14px;
+  color: #64748b;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px dashed #e2e8f0;
+  margin: 0;
+}
+
+/* 我的课程 / 行业报告区块 */
+.dashboard-learning-section {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dashboard-learning-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.dashboard-learning-section__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f1a2b;
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-learning-section__subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 20px;
+}
+
+.dashboard-learning-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-learning-report-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-learning-report-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.dashboard-learning-report-card__header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+}
+
+.dashboard-learning-report-header--default {
+  background: #fef3c7;
+}
+
+.dashboard-learning-report-header--sky {
+  background: #e0f2fe;
+}
+
+.dashboard-learning-report-header--pink {
+  background: #fce7f3;
+}
+
+.dashboard-learning-report-header--green {
+  background: #dcfce7;
+}
+
+.dashboard-learning-report-card__pdf {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.dashboard-learning-report-header--default .dashboard-learning-report-card__pdf {
+  color: #b45309;
+}
+
+.dashboard-learning-report-header--sky .dashboard-learning-report-card__pdf {
+  color: #0369a1;
+}
+
+.dashboard-learning-report-header--pink .dashboard-learning-report-card__pdf {
+  color: #be185d;
+}
+
+.dashboard-learning-report-header--green .dashboard-learning-report-card__pdf {
+  color: #15803d;
+}
+
+.dashboard-learning-report-card__body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-learning-report-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f1a2b;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dashboard-learning-report-card__meta {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px;
+}
+
+.dashboard-learning-report-card__btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #3b82f6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboard-learning-report-card__btn:hover {
+  background: #2563eb;
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .dashboard-explore__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-experts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-learning-reports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-sidebar {
+    width: 56px;
+    min-width: 56px;
+    padding: 12px 0;
+  }
+
+  .dashboard-sidebar__brand-wrap {
+    display: none;
+  }
+
+  .dashboard-nav__label {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 20px 20px 32px;
+  }
+
+  .dashboard-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-experts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-learning-reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
